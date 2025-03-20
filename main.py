@@ -31,6 +31,11 @@ app.add_middleware(
 # Initialize JamAI client
 jamai = JamAI(project_id=PROJECT_ID, token=PAT)
 
+@app.get("/")
+async def hello():
+    """Returns a simple greeting."""
+    return {"message": "Hello, welcome to the Health Sync API!"}
+
 # Chat session management
 chat_sessions = {}
 
